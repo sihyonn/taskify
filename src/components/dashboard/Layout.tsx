@@ -9,11 +9,10 @@ const S = {
   `,
   MainSection: styled.div``,
   ContentBox: styled.div`
-    background-color: ${({ theme }) => theme.color.background};
     width: 100vw;
-    height: 100%;
-
+    height: 100vh;
     margin-top: 7rem;
+    background-color: ${({ theme }) => theme.color.background};
 
     ${MEDIA_QUERIES.onMobile} {
       margin-top: 6rem;
