@@ -8,10 +8,11 @@ const S = {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    width: 100%;
     height: 7rem;
     border-bottom: 0.1rem solid ${theme.color.grayLight};
 

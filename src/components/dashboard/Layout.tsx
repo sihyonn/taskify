@@ -5,23 +5,17 @@ import MEDIA_QUERIES from '@/constants/MEDIAQUERIES';
 
 const S = {
   Container: styled.div`
-    position: fixed;
-    width: calc(100vw - 20.75rem);
-    min-height: 100%;
-    margin-left: 20.75rem;
-    margin-top: 7rem;
-    background-color: red;
-    padding: 5rem;
-    border: 5px solid black;
+    display: flex;
+  `,
+  MainSection: styled.div``,
+  ContentBox: styled.div`
+    background-color: ${({ theme }) => theme.color.background};
+    width: 100vw;
+    height: 100%;
 
-    ${MEDIA_QUERIES.onTablet} {
-      width: calc(100vw - 15rem);
-      margin-left: 15rem;
-      margin-top: 7rem;
-    }
+    margin-top: 7rem;
+
     ${MEDIA_QUERIES.onMobile} {
-      width: calc(100vw - 7rem);
-      margin-left: 7rem;
       margin-top: 6rem;
     }
   `,
@@ -41,16 +35,18 @@ const invitedUsers = [
 
 function Layout({ children }: any) {
   return (
-    <>
+    <S.Container>
       <Sidebar dashboards={dashboards} />
-      <DashBoardHeader
-        menuName={'내 대시보드'}
-        profileName={'남현준'}
-        profileImgURL={MY_IMAGE_URL}
-        invitedUsers={invitedUsers}
-      />
-      <S.Container className="내가쓸거">{children}</S.Container>
-    </>
+      <S.MainSection>
+        <DashBoardHeader
+          menuName={'내 대시보드'}
+          profileName={'남현준'}
+          profileImgURL={MY_IMAGE_URL}
+          invitedUsers={invitedUsers}
+        />
+        <S.ContentBox>{children}</S.ContentBox>
+      </S.MainSection>
+    </S.Container>
   );
 }
 
